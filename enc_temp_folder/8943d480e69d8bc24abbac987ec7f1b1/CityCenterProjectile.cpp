@@ -82,14 +82,14 @@ void ACityCenterProjectile::BeginPlay()
 void ACityCenterProjectile::OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 		//TargetFlock = nullptr;
-		//TargetFlock = Cast<ACityCenterFlockActor>(OtherActor);
+		TargetFlock = Cast<ACityCenterFlockActor>(OtherActor);
 
-		//if (TargetFlock != nullptr)
-		//{
-		//	TargetBird = Cast<UStaticMeshComponent>(OtherComp);
-		//	TargetFlock->HitFlock(TargetBird);
-		//	ProjectileVelocity += 50;
-		//}
+		if (TargetFlock != nullptr)
+		{
+			TargetBird = Cast<UStaticMeshComponent>(OtherComp);
+			TargetFlock->HitFlock(TargetBird);
+			ProjectileVelocity += 50;
+		}
 }
 
 void ACityCenterProjectile::OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)

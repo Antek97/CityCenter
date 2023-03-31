@@ -58,8 +58,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	UStaticMeshComponent* TargetBird = nullptr;
 
-	bool bIsOverlapBegin = false;
-
 	FVector VelocityProjectile = FVector::ZeroVector;
 	TArray<ACityCenterFlockActor*> FoundActors;
 
@@ -79,7 +77,7 @@ protected:
 	bool bFlagCount = false;
 
 	UFUNCTION(BlueprintCallable)
-	void SetFolow();
+	void SetTrackToTarget();
 	
 };
 
