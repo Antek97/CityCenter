@@ -10,7 +10,6 @@ ACityCenterFlockActor::ACityCenterFlockActor()
 {
 	Root = CreateDefaultSubobject<USceneComponent>(FName(TEXT("Root")));
 	SetRootComponent(Root);
-
 	for (int32 i = 0; i < QuantityBirdsInFlock; ++i)
 	{
 		UStaticMeshComponent* StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(FName(FString::Printf(TEXT("bird_%d"), i)));
@@ -52,7 +51,6 @@ void ACityCenterFlockActor::OnOverlapBegin(class UPrimitiveComponent* Overlapped
 
 void ACityCenterFlockActor::OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Orange, TEXT("DZIA£AJ TY KURWA GNOJU JEBANY"));
 	bool FallBack = true;
 }
 
